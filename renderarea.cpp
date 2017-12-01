@@ -49,6 +49,11 @@ void RenderArea::on_shape_changed()
             mIntervalLength = 2* M_PI;
             mStepCount = 512;
             break;
+        case Line:
+            mIntervalLength = 1;
+            mScale = 50;
+            mStepCount = 128;
+            break;
         default:
             break;
     }
@@ -72,6 +77,9 @@ QPointF RenderArea::compute(float t)
             break;
         case FutureCurve:
             return compute_future_curve(t);
+            break;
+        case Line:
+            return compute_line(t);
             break;
         default:
             break;
@@ -115,13 +123,18 @@ QPointF RenderArea::compute_hypo(float t)
 
 QPointF RenderArea::compute_future_curve(float t)
 {
-    //float theta = 30.0;
+    // Displays a Rose
     float k = 5;
 
     return QPointF(
             cos(k * t) * cos(t),    // X
             cos(k * t) * sin(t)     // Y
-    );
+                );
+}
+
+QPointF RenderArea::compute_line(float t)
+{
+    return QPointF( 1 - t, 1 - t);
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)

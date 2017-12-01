@@ -13,7 +13,7 @@ public:
     QSize minimumSizeHint() const Q_DECL_OVERRIDE;  // This property holds the recommended minimum size for the widget.
     QSize sizeHint() const Q_DECL_OVERRIDE;         // This property holds the recommended size for the widget
 
-    enum ShapeType { Astroid, Cycloid, HuygensCycloid, HypoCycloid, FutureCurve };
+    enum ShapeType { Astroid, Cycloid, HuygensCycloid, HypoCycloid, Line, FutureCurve };
 
     void setBackgroundColor( QColor color) { mBackgroundColor = color; }    //setter
     QColor backgroundColor () const { return mBackgroundColor; }  // the const makes sure the function will not modify and member class variables
@@ -35,6 +35,7 @@ private:
     QPointF compute_huygens( float t);
     QPointF compute_hypo( float t);
     QPointF compute_future_curve( float t );
+    QPointF compute_line( float t );
 
 
 private:
