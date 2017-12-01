@@ -26,6 +26,8 @@ private slots:
 
 
 
+    void on_btnFutureCurve_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
