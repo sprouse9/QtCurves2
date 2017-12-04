@@ -25,7 +25,10 @@ public:
     float scale() const { return mScale; }
 
     void setInterval( float interval ) { mIntervalLength = interval; repaint(); }
-    float interval() const { return mIntervalLength; }
+    float intervalLength() const { return mIntervalLength; }
+
+    void setStepCount( int count ) { mStepCount = count; repaint(); }
+    int stepCount() const { return mStepCount; }
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
