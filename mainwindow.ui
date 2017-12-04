@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>617</width>
-    <height>483</height>
+    <width>567</width>
+    <height>375</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -84,6 +84,12 @@
       <width>68</width>
       <height>24</height>
      </rect>
+    </property>
+    <property name="decimals">
+     <number>1</number>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
     </property>
    </widget>
    <widget class="QPushButton" name="btnLine">
