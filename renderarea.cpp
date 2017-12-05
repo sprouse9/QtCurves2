@@ -169,4 +169,13 @@ void RenderArea::paintEvent(QPaintEvent *event)
         prevPixel = pixel;
     }
 
+    // The last line to mIntervalLength is not drawn b/c the forloop above might exit before reaching it
+    // depending on the step value. Let's force a line drawn from the very last pixel (prevPixel) to
+    // the pixel at mIntervalLength
+
+    QPointF point = compute(mIntervalLength);
+    QPoint pixel;
+    pixel.setX( point.x() * mScale + center.x());
+    pixel.setY( point.y() * mScale + center.y());
+    painter.drawLine(pixel, prevPixel);
 }
