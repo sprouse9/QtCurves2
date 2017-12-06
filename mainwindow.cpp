@@ -94,17 +94,11 @@ void MainWindow::on_btnBackgroundColor_clicked()
 
 }
 
-
-
-
-
-
-void MainWindow::on_MainWindow_destroyed()
-{
-
-}
-
 void MainWindow::on_btnLineColor_clicked()
 {
-
+    QColor color = QColorDialog::getColor(this->ui->renderArea->shapeColor(), this, "Select Color");
+    if( color.isValid() ){
+        ui->renderArea->setShapeColor(color);
+        ui->renderArea->repaint();
+    }
 }

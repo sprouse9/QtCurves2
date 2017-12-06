@@ -36,8 +36,6 @@ private slots:
 
     void on_btnBackgroundColor_clicked();
 
-    void on_MainWindow_destroyed();
-
     void on_btnLineColor_clicked();
 
 private:

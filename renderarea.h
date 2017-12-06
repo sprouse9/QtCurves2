@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QColor>
+#include <QPen>
 
 class RenderArea : public QWidget
 {
@@ -17,6 +18,9 @@ public:
 
     void setBackgroundColor( QColor color) { mBackgroundColor = color; }    //setter
     QColor backgroundColor () const { return mBackgroundColor; }  // the const makes sure the function will not modify and member class variables
+
+    void setShapeColor( QColor color) { mPen.setColor(color); }    //setter
+    QColor shapeColor () const { return mPen.color(); }  // the const makes sure the function will not modify and member class variables
 
     void setShape (ShapeType shape) { mShape = shape; on_shape_changed(); }
     ShapeType shape() const { return mShape; }
@@ -49,7 +53,7 @@ private:
 
 private:
     QColor mBackgroundColor;
-    QColor mShapeColor;
+    QPen mPen;
     ShapeType mShape;
 
     float mIntervalLength;
